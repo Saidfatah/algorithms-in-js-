@@ -39,6 +39,14 @@ function findSmallestPositiveInteger(A) {
     return smallestPositiveInteger
 }
 
+function findSmallestPositiveIntegerLookupMethod(arr) {
+    const lookup = new Set(arr);
+    let i = 1;
+    while (lookup.has(i)) {
+        i++;
+    }
+    return i;
+}
 
 const arr =[-1,-2,1,3,10,9,3,2,3,3,10,2,7,99,100,10000,500,50,60,70,33]
 
