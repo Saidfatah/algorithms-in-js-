@@ -89,6 +89,22 @@ class LinkedList{
     this.size--;
   }
   
+   reverseLinear(){    
+    let prev =null;
+    let current=this.head;
+    let next =null;
+
+    while(current !== null){
+      next= current.next
+      current.next = prev;
+      prev = current;
+      current = next
+    }
+
+    this.head = prev;
+  }
+  
+
   getAt(index){
     let current=this.head;
     let count=0;
@@ -104,6 +120,7 @@ class LinkedList{
   }
   
   printList(){
+    console.log("printList")
     let currentNode=this.head;
     
     while(currentNode){
@@ -118,13 +135,13 @@ class LinkedList{
 
 const ll = new LinkedList()
 
-ll.insertFirst(100)
-ll.insertFirst(101)
-ll.insertFirst(102)
-ll.insertFirst(104)
-ll.insertFirst(109)
+ll.insertFirst(1)
+ll.insertFirst(2)
+ll.insertFirst(9)
+ll.insertFirst(10)
+ll.insertFirst(12)
 
-ll.insertAtPosition(3,768)
-
-//ll.insertLast(999)
+ll.reverseLinear()
+ll.printList()
+ll.reverseLinear()
 ll.printList()
