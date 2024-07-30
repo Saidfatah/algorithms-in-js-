@@ -89,22 +89,6 @@ class LinkedList{
     this.size--;
   }
   
-   reverseLinear(){    
-    let prev =null;
-    let current=this.head;
-    let next =null;
-
-    while(current !== null){
-      next= current.next
-      current.next = prev;
-      prev = current;
-      current = next
-    }
-
-    this.head = prev;
-  }
-  
-
   getAt(index){
     let current=this.head;
     let count=0;
@@ -130,6 +114,41 @@ class LinkedList{
     
   }
   
+  
+   reverseLinear(){    
+    let prev =null;
+    let current=this.head;
+    let next =null;
+
+    while(current !== null){
+      next= current.next
+      current.next = prev;
+      prev = current;
+      current = next
+    }
+
+    this.head = prev;
+  }
+  
+  
+   reverseRecursive(){    
+    const recursion=(prev,current,next)=>{
+       if(current === null){
+         return this.head = prev;
+       }
+      
+      next= current.next
+      current.next = prev;
+      prev = current;
+      current = next
+      recursion(prev,current,next);
+    }
+    
+    recursion(null,this.head,null)
+  }
+  
+
+  
 }
 
 
@@ -140,8 +159,9 @@ ll.insertFirst(2)
 ll.insertFirst(9)
 ll.insertFirst(10)
 ll.insertFirst(12)
-
-ll.reverseLinear()
 ll.printList()
-ll.reverseLinear()
+
+ll.reverseRecursive()
+ll.printList()
+ll.reverseRecursive()
 ll.printList()
