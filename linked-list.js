@@ -147,7 +147,26 @@ class LinkedList{
     recursion(null,this.head,null)
   }
   
-
+ 
+   reverseRecursiveHeadVersion(){    
+    const reverseRecursion=(head)=>{
+      console.log(head.data)
+      
+       if(head == null || head.next == null){
+         return head;
+       }
+      
+      const revsedListHead = reverseRecursion(head.next)
+      
+      head.next.next = head;
+      head.next = null;
+      
+      return revsedListHead;
+    }
+    
+   return reverseRecursion(this.head)
+  }
+  
   
 }
 
@@ -159,9 +178,7 @@ ll.insertFirst(2)
 ll.insertFirst(9)
 ll.insertFirst(10)
 ll.insertFirst(12)
-ll.printList()
+//ll.printList()
 
-ll.reverseRecursive()
-ll.printList()
-ll.reverseRecursive()
-ll.printList()
+ll.reverseRecursiveHeadVersion()
+//ll.printList()
