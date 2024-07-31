@@ -164,7 +164,7 @@ class LinkedList{
       return revsedListHead;
     }
     
-   return reverseRecursion(this.head)
+    this.head =reverseRecursion(this.head)
   }
   
   
@@ -178,7 +178,7 @@ ll.insertFirst(2)
 ll.insertFirst(9)
 ll.insertFirst(10)
 ll.insertFirst(12)
-//ll.printList()
+ll.printList()
 
 ll.reverseRecursiveHeadVersion()
-//ll.printList()
+ll.printList()
